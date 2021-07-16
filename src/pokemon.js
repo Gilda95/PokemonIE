@@ -146,10 +146,6 @@ $(document).ready(() => {
     $('.window.fight').hide()
     $('.window.menu').show()
     $('.questionTexts').show() // ogni volta che appare il menu, compare anche il box domande
-    
-    /* $('.textQ1').text('Porno coi nani')
-    $('.textQ2').text('Gay!')
-    typer() */
   }
 
   // Health bar width calculation and health numbers
@@ -247,9 +243,15 @@ $(document).ready(() => {
                           }, 2000)
                         }, 2000)
                       } else {
-                        $('.window.menu').hide() // non so perchè ma serve
+                        $('.window.menu').hide() 
                         if (hpFoeLast != hpFoe){
-                          questionSel = Math.floor(Math.random()*(nquestion))           // provo per random question
+                          questions1.splice(questionSel,1)
+                          questions2.splice(questionSel,1)
+                          answers0.splice(questionSel,1)
+                          answers1.splice(questionSel,1)
+                          answers2.splice(questionSel,1)
+                          nquestion = questions1.length
+                          questionSel = Math.floor(Math.random()*(nquestion))    // ha fatto danno, cambia domanda
                         }
                         hpFoeLast = hpFoe
 
@@ -264,9 +266,7 @@ $(document).ready(() => {
                           reset()
                           $('.textQ1').text(questions1[questionSel])
                           $('.textQ2').text(questions2[questionSel])
-                          /* $('.textQ1').text(`${questions1.toUpperCase()}`) // prova 
-                          $('.textQ2').text('Gay!') // prova */
-                          typer() // prova
+                          typer() 
                         }, 2400)
                       }
                     }, 100)
