@@ -86,7 +86,7 @@ $(document).ready(() => {
   // MOSSE RANDOM - inizializzazione ************************************************
   var questions1 = ['I.E. is a disease of...', 
                     'Name of the criteria used?', 
-                    'Fever has to be bigger than...',
+                    'Fever has to be greater than...',
                     'What can cause an I.E.?',
                     'A typical therapy for I.E. is...', 
                     'A typical medical exam made is...', 
