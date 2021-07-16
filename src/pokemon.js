@@ -91,13 +91,13 @@ $(document).ready(() => {
                     'A typical therapy for I.E. is...', 
                     'A typical medical exam made is...', 
                     'Which is the most affected category?', 
-                    'Drug addiction cause I.E. ...', 
-                    'Which valve does I.E. usually infect?', 
+                    'Drug addiction causes I.E. ...', 
+                    'Which valve is usually infected?',
                     'What is injected during PET?', 
                     'Which bacteria commoly cause I.E.?']
   var nquestion = questions1.length
-  var questions2 = ['', '', '', '', '', '', '']
-  var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',    'Radioisotope', 'All']
+  var questions2 = ['', '', '', '', '', '', '', '', '', '', '']
+  var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',     'Radioisotope', 'All']
   var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Streptococchi']
   var answers2 = ['Arms',   'Brian',  '38', 'Viruses',        'Antibiotics',  'Autopsy',        'Young Female',     'Possibly', 'None',       'Blood',        'None']
   var questionSel = Math.floor(Math.random()*(nquestion))
