@@ -69,7 +69,17 @@ $(document).ready(() => {
   /*   $('#move0').html('TACKLE')*/  
   // $('#move1').html('TAIL WHIP')
   // $('#move2').html('-')
-  const trueAnswers = ['HEART', 'LARA', '38', 'DUKE', 'ANTIBIOTICS', 'BLOOD CULTURE', 'Aged Male']
+  const trueAnswers = ['HEART', 
+                      'DUKE', 
+                      '38', 
+                      'FUNGI&BACTERIA',
+                      'ANTIBIOTICS', 
+                      'BLOOD CULTURE', 
+                      'AGED MALE', 
+                      'POSSIBLY', 
+                      'AORTIC', 
+                      'RADIOISOTOPE',
+                      'STREPTOCOCCHI']
 
 
 
@@ -80,14 +90,18 @@ $(document).ready(() => {
                     'What can cause an I.E.?',
                     'A typical therapy for I.E. is...', 
                     'A typical medical exam made is...', 
-                    'Which iS the most affected category?']
+                    'Which is the most affected category?', 
+                    'Drug addiction cause I.E. ...', 
+                    'Which valve does I.E. usually infect?', 
+                    'What is injected during PET?', 
+                    'Which bacteria commoly cause I.E.?']
   var nquestion = questions1.length
-  console.log(nquestion)
   var questions2 = ['', '', '', '', '', '', '']
-  var answers0 = ['Heart', 'Duke', '37', 'Too much study', 'Ibuprofen', 'Endoscopy', 'AppStat Students']
-  var answers1 = ['Brain', 'Mara', '39', 'Fungi and Bacteria', 'Paracetamol', 'Blood Culture', 'Aged Male']
-  var answers2 = ['Arms', 'Brian', '38', 'Viruses', 'Antibiotics', 'Autopsy', 'Young Female']
+  var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic ',    'Radioisotope', 'All']
+  var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Spreptococchi']
+  var answers2 = ['Arms',   'Brian',  '38', 'Viruses',        'Antibiotics',  'Autopsy',        'Young Female',     'Possibly', 'None',       'Blood',        'None']
   var questionSel = Math.floor(Math.random()*(nquestion+1))
+  console.log(questionSel)
   $('#move0').html(answers0[questionSel])
   $('#move1').html(answers1[questionSel])
   $('#move2').html(answers2[questionSel])
@@ -232,7 +246,7 @@ $(document).ready(() => {
                         }, 2000)
                       } else {
                         $('.window.menu').hide() // non so perchè ma serve
-                        questionSel = Math.floor(Math.random()*(nquestion-1))           // provo per random question
+                        questionSel = Math.floor(Math.random()*(nquestion+1))           // provo per random question
                         $('#move0').html(answers0[questionSel])
                         $('#move1').html(answers1[questionSel])
                         $('#move2').html(answers2[questionSel])
@@ -344,6 +358,9 @@ $(document).ready(() => {
       typer()
       window.setTimeout( () => {
         reset()
+        $('.textQ1').text(questions1[questionSel])
+        $('.textQ2').text(questions2[questionSel])
+        typer()
       }, 1000)
     } else {
       $('.text1').text('Used ANTIBIOTIC!')
@@ -428,6 +445,9 @@ $(document).ready(() => {
     typer()
     window.setTimeout( () => {
       reset()
+      $('.textQ1').text(questions1[questionSel])
+      $('.textQ2').text(questions2[questionSel])
+      typer()
     }, 3000)
   })
   $('.button.run').click(() => {
