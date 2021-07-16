@@ -49,7 +49,7 @@ $(document).ready(() => {
   // }
 
   // Player setup
-  const player = 'Prof. Secchi'
+  const player = 'Dr. Secchi'
   // var playerID = 25
   const playerLevel = 5
   const playerPokemon = {
@@ -97,7 +97,7 @@ $(document).ready(() => {
                     'Which bacteria commoly cause I.E.?']
   var nquestion = questions1.length
   var questions2 = ['', '', '', '', '', '', '']
-  var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic ',    'Radioisotope', 'All']
+  var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',    'Radioisotope', 'All']
   var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Spreptococchi']
   var answers2 = ['Arms',   'Brian',  '38', 'Viruses',        'Antibiotics',  'Autopsy',        'Young Female',     'Possibly', 'None',       'Blood',        'None']
   var questionSel = Math.floor(Math.random()*(nquestion+1))
@@ -234,8 +234,9 @@ $(document).ready(() => {
                           $('.text2').text('')
                           typer()
                           window.setTimeout( () => {
-                            $('.text1').text(`${player.toUpperCase()} is out of`)
-                            $('.text2').text('useable POKéMON...')
+                            $('.text1').text(`${player.toUpperCase()} is out of usable POKéMON`)
+                            //$('.text2').text('useable POKéMON...')
+                            $('.text2').text('')
                             typer()
                             window.setTimeout( () => {
                               $('.text1').text(`${player.toUpperCase()} whited out!`)
@@ -329,6 +330,13 @@ $(document).ready(() => {
                 hpFoe -= (trueAnswers.includes(`${moveName.toUpperCase()}`)) ? baseDamage : 0
                 $('.foe .hp-bar-active').animate({
                   width: `${healthbar(hpFoe, hpFoeFull)}%`
+                }, 500)
+                window.setTimeout( () => {
+                  if(trueAnswers.includes(`${moveName.toUpperCase()}`)==false) {
+                    $('.text1').text(`Oh no! ${moveName.toUpperCase()} is wrong!`)
+                    $('.text2').text('')
+                    typer()
+                  }
                 }, 500)
                 attackEnd()
               }, 100)
