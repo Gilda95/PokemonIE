@@ -12,7 +12,8 @@
 }
 body{
     /* background-color:#bbac58; */
-    background-color:#e4dbaa;    /* background color of whole page */
+    /* background-color:#e4dbaa; */    /* background color of whole page */
+    background-color:#ebe4bf;
     color:#2f3622;
     font-family:'Pokemon', monospace;
     /* font-size:20px; */ 
@@ -221,7 +222,8 @@ span span,.button span,.level span,.name span{ /* font size of "potion" */
     border-image:url("img/frame.svg") 45% stretch;
     border-style:solid;
     border-width: 0.7em;
-    background:#bbac58 
+    /* background:#bbac58 */ 
+    background: #ebe4bf
 }
 .windows .window.texts{ /* Dimension of the box */
     margin:0;
@@ -230,15 +232,6 @@ span span,.button span,.level span,.name span{ /* font size of "potion" */
     right:0.1em;
     bottom:4.6em
 }
-
-/* .window.questions .questionText{
-    display:none;
-    bottom:0.1em;
-    right:0.1em;
-    left:3.3em;
-    min-height:4.6em;
-    padding:5em 0 0 0.8em
-} */
 
 .windows .window.questionTexts{ /* quiiiiiii */
     margin:0;
@@ -270,35 +263,7 @@ span span,.button span,.level span,.name span{ /* font size of "potion" */
     width:7.4em;
     padding:0.5em 0 0 0.8em
 }
-/*  */
-/* .questions .questionText{ 
-    position:absolute;
-    -o-border-image:url("img/frame.svg") 45% stretch;
-    border-image:url("img/frame.svg") 45% stretch;
-    border-style:solid;
-    border-width:0.7em;
-    background:#bbac58 
-}
-.questions .questionText{
-    margin:0;
-    height:3.2em;
-    left:0.1em;
-    right:0.1em;
-    bottom:0.1em
-}
-.questions .questionText span{
-    height:1em;
-    width:1em;
-    display:inline-block
-}
-.questions .questionText{
-    margin:0;
-    height:5em;
-    left:0.1em;
-    right:0.1em;
-    bottom:0.1em
-} */
-/*  */
+
 .windows .window.menu sup,.windows .window.menu sub{
     display:inline-block;
     margin-right:-1.3em;
