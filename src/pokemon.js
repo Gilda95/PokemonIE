@@ -94,7 +94,7 @@ $(document).ready(() => {
                     'Drug addiction causes I.E. ...', 
                     'Which valve is usually infected?',
                     'What is injected during PET?', 
-                    'Which bacteria commoly cause I.E.?']
+                    'Which bacteria commonly cause I.E.?']
   var nquestion = questions1.length
   var questions2 = ['', '', '', '', '', '', '', '', '', '', '']
   var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',     'Radioisotope', 'All']
