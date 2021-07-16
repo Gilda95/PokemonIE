@@ -122,6 +122,7 @@ $(document).ready(() => {
   }
   const hpFoeFull = foePokemon.hp
   let hpFoe = hpFoeFull
+  let hpFoeLast = hpFoe
   // var foeBaseAttack = foePokemon.atk
   let foeBaseDefense = foePokemon.def
   $('.foe .level').text(playerLevel)
@@ -247,7 +248,10 @@ $(document).ready(() => {
                         }, 2000)
                       } else {
                         $('.window.menu').hide() // non so perchè ma serve
-                        questionSel = Math.floor(Math.random()*(nquestion+1))           // provo per random question
+                        if (hpFoeLast != hpFoe){
+                          questionSel = Math.floor(Math.random()*(nquestion+1))           // provo per random question
+                        }
+                        hpFoeLast = hpFoe
                         $('#move0').html(answers0[questionSel])
                         $('#move1').html(answers1[questionSel])
                         $('#move2').html(answers2[questionSel])
