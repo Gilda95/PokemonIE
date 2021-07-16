@@ -100,7 +100,7 @@ $(document).ready(() => {
   var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',    'Radioisotope', 'All']
   var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Spreptococchi']
   var answers2 = ['Arms',   'Brian',  '38', 'Viruses',        'Antibiotics',  'Autopsy',        'Young Female',     'Possibly', 'None',       'Blood',        'None']
-  var questionSel = Math.floor(Math.random()*(nquestion+1))
+  var questionSel = Math.floor(Math.random()*(nquestion))
   console.log(questionSel)
   $('#move0').html(answers0[questionSel])
   $('#move1').html(answers1[questionSel])
@@ -249,9 +249,10 @@ $(document).ready(() => {
                       } else {
                         $('.window.menu').hide() // non so perchè ma serve
                         if (hpFoeLast != hpFoe){
-                          questionSel = Math.floor(Math.random()*(nquestion+1))           // provo per random question
+                          questionSel = Math.floor(Math.random()*(nquestion))           // provo per random question
                         }
                         hpFoeLast = hpFoe
+
                         $('#move0').html(answers0[questionSel])
                         $('#move1').html(answers1[questionSel])
                         $('#move2').html(answers2[questionSel])
