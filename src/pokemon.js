@@ -54,9 +54,9 @@ $(document).ready(() => {
   const playerLevel = 5
   const playerPokemon = {
     'name': 'Mara',
-    'hp': 35,
-    'atk': 70,
-    'def': 30
+    'hp': 40,
+    'atk': 75,
+    'def': 40
   }
   const hpPlayerTotal = playerPokemon.hp
   let hpPlayer = hpPlayerTotal
@@ -98,7 +98,7 @@ $(document).ready(() => {
   var nquestion = questions1.length
   var questions2 = ['', '', '', '', '', '', '']
   var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',    'Radioisotope', 'All']
-  var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Spreptococchi']
+  var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Streptococchi']
   var answers2 = ['Arms',   'Brian',  '38', 'Viruses',        'Antibiotics',  'Autopsy',        'Young Female',     'Possibly', 'None',       'Blood',        'None']
   var questionSel = Math.floor(Math.random()*(nquestion))
   console.log(questionSel)
@@ -116,9 +116,9 @@ $(document).ready(() => {
   // var foeID = 133
   const foePokemon = {
     'name': 'Endocarditis',
-    'hp': 40,
-    'atk': 55,
-    'def': 50
+    'hp': 45,
+    'atk': 50,
+    'def': 40
   }
   const hpFoeFull = foePokemon.hp
   let hpFoe = hpFoeFull
