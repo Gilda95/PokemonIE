@@ -63,7 +63,7 @@ $(document).ready(() => {
   const playerPokemon = {
     'name': 'Mara',
     'hp': 40,
-    'atk': 750,
+    'atk': 75,
     'def': 40
   }
   const hpPlayerTotal = playerPokemon.hp
