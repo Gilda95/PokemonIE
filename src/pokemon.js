@@ -48,6 +48,14 @@ $(document).ready(() => {
   //   return stats
   // }
 
+
+  // Audio setup 
+  var audioIn = new Audio('sfx/battle.mp3')
+  var audioOut = new Audio('sfx/victory.mp3')
+  var audioSel = new Audio('sfx/click.mp3')
+  var audioPika = new Audio('sfx/pikachu.mp3')
+  var audioIE = new Audio('sfx/jinx.mp3')
+
   // Player setup
   const player = 'Dr. Secchi'
   // var playerID = 25
@@ -55,7 +63,7 @@ $(document).ready(() => {
   const playerPokemon = {
     'name': 'Mara',
     'hp': 40,
-    'atk': 75,
+    'atk': 750,
     'def': 40
   }
   const hpPlayerTotal = playerPokemon.hp
@@ -166,28 +174,33 @@ $(document).ready(() => {
         $('.foe .images').delay(500).animate({
           bottom: '-35em'
         }, 1000)
-        $('.text1').text(`${foePokemon.name.toUpperCase()} fainted!`)
-        $('.text2').text('')
-        typer()
         window.setTimeout( () => {
-          $('.foe .stats').hide()
-          //$('.text1').text(`Got $${Math.floor(playerLevel * 2.5)} for`)
-          $('.text1').text(`Got 30L for`)
-          $('.text2').text('winning!')
+          audioIn.pause()
+          audioOut.play()
+    
+          $('.text1').text(`${foePokemon.name.toUpperCase()} fainted!`)
+          $('.text2').text('')
           typer()
-          $('.window.menu').hide() // non so perchè ma serve
           window.setTimeout( () => {
-            $('.window.menu').hide() // non so perchè ma serve
-            $('.text1').text(`${foe.toUpperCase()}: I can't`)
-            $('.text2').text('believe it!')
+            $('.foe .stats').hide()
+            //$('.text1').text(`Got $${Math.floor(playerLevel * 2.5)} for`)
+            $('.text1').text(`Got 30L for`)
+            $('.text2').text('winning!')
             typer()
+            // $('.window.menu').hide() // non so perchè ma serve
             window.setTimeout( () => {
-              $('.text1').text('I chose the')
-              $('.text2').text('wrong disease!')
+              $('.window.menu').hide() // non so perchè ma serve
+              $('.text1').text(`${foe.toUpperCase()}: I can't`)
+              $('.text2').text('believe it!')
               typer()
+              window.setTimeout( () => {
+                $('.text1').text('I chose the')
+                $('.text2').text('wrong disease!')
+                typer()
+              }, 2000) // era a riga 180
             }, 2000)
           }, 2000)
-        }, 2000)
+        }, 1500) //2000
       }, 2000)
     } else {
       window.setTimeout( () => {
@@ -423,34 +436,43 @@ $(document).ready(() => {
   var potionCount = 3
   $('.potionCount').text(potionCount)
   $('.button.item').click(() => {
+    audioSel.play() // CLICK *********************
     $('.window.item').show()
     $('.window.menu').hide()
   })
   $('.button.potion').click(() => {
+    audioSel.play() // CLICK *********************
     potion('normal')
   })
   $('.button.fight').click(() => {
+    audioSel.play() // CLICK *********************
     $('.window.fight').show()
   })
   $('.button.growl').click(() => {
+    audioSel.play() // CLICK *********************
     growl()
   })
   $('.button#move0').click(() => {
+    audioSel.play() // CLICK *********************
     var answer = answers0[questionSel]
     attack(answer)
   })
   $('.button#move1').click(() => {
+    audioSel.play() // CLICK *********************
     var answer = answers1[questionSel]
     attack(answer)
   })
   $('.button#move2').click(() => {
+    audioSel.play() // CLICK *********************
     var answer = answers2[questionSel]
     attack(answer)
   })
   $('.button.back').click(() => {
+    // audioSel.play() // CLICK *********************
     reset()
   })
   $('.button.pkmn').click(() => {
+    audioSel.play() // CLICK *********************
     /* $('.window.pkmn').show() */
     hider()
     $('.text1').text('You have to fight')
@@ -464,6 +486,7 @@ $(document).ready(() => {
     }, 3000)
   })
   $('.button.run').click(() => {
+    audioSel.play() // CLICK *********************
     hider()
     $('.text1').text('No! There\'s no')
     $('.text2').text('running from an')
@@ -488,6 +511,7 @@ $(document).ready(() => {
     $('.foe .images').css('right', '16em')
     $('.player .images').css('left', '16em')
     $('.player .pokemon, .foe .pokemon, .stats, .balls, .window.item, .window.pkmn, .window.fight, .window.menu').hide()
+    audioIn.play()
     window.setTimeout(() => {
       $('.foe .images').animate({
         right: '0.8em'
@@ -510,6 +534,9 @@ $(document).ready(() => {
               $('.text1').text(`${foe.toUpperCase()} sent`)
               $('.text2').text(`out ${foePokemon.name.toUpperCase()}!`)
               typer()
+              window.setTimeout(() => {
+                audioIE.play() // AUDIO IE ***************************************
+                }, 300)
               $('.foe .pokemon').show()
               $('.foe .trainer').hide()
               $('.foe .images').animate({
@@ -519,7 +546,7 @@ $(document).ready(() => {
                 $('.foe .stats').show()
                 $('.player .images').animate({
                   left: '-21em'
-                }, 400, 'linear')
+                }, 400, 'linear') 
                 window.setTimeout(() => {
                   $('.player .trainer').hide()
                   $('.player .pokemon').show()
@@ -531,13 +558,16 @@ $(document).ready(() => {
                   typer()
                   $('.player .stats').show()
                   window.setTimeout(() => {
+                    audioPika.play() // AUDIO PIKA ***************************************
+                    }, 300)
+                  window.setTimeout(() => {
                     reset()
                     $('.textQ1').text(questions1[questionSel])
                     $('.textQ2').text(questions2[questionSel])
                     typer()
                   }, 2000)
                 }, 800)
-              }, 1500)
+              }, 2500) // 1500
             }, 1000)
           }, 2500)
         }, 400)
