@@ -240,6 +240,15 @@ span span,.button span,.level span,.name span{ /* font size of "potion" */
     height:3.2em;
     display: none;
 }
+.windows .start{ /* quiiiiiiiiiiiii */
+    margin:0;
+    bottom:12em;
+    left:8em;
+    /* right:0.1em; */
+    height:3.2em;
+    display: none;
+    position: fixed;
+}
 .windows .window.texts .text span,
 .windows .window.questionTexts .text span{
     height:1em;
