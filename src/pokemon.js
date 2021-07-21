@@ -55,6 +55,9 @@ $(document).ready(() => {
   var audioSel = new Audio('sfx/click.mp3')
   var audioPika = new Audio('sfx/pikachu.mp3')
   var audioIE = new Audio('sfx/jinx.mp3')
+  audioIn.volume = 0.3
+  audioIE.volume = 0.5
+  audioPika.volume = 0.7
 
   // Player setup
   const player = 'Dr. Secchi'
@@ -433,6 +436,11 @@ $(document).ready(() => {
   }
 
   // Click elements
+  $('.button.start').click(() => { // BOTTONE START ATTIVATO
+    $('.button.start').hide()
+    playPokemon()
+    audioIn.play() // AUDIO INIZIALE!!!!! *********************
+  })
   var potionCount = 3
   $('.potionCount').text(potionCount)
   $('.button.item').click(() => {
@@ -575,6 +583,44 @@ $(document).ready(() => {
     }, 600)
   }
 
-  // Start
-  playPokemon()
+  // Start MOLTO VECCHIO
+  //playPokemon()
+
+  const starting = () => {
+    //hider()
+    $('.player .pokemon, .foe .pokemon, .stats, .balls, .window.item, .window.pkmn, .window.fight, .window.menu').hide()
+    $('.player .trainer, .foe .trainer').hide()  
+    $('.button.start').show()
+    $('.text1').text(`Defeat Infective`)
+    $('.text2').text('Endocarditis!')
+    typer()
+  }
+
+  // START!
+ starting()
+
+
+
+
+
+
+/* 
+var mixBut = document.getElementById("mixBut");
+
+mixBut.addEventListener("click", Start);
+
+function Start(){
+    console.log("Started");
+    playPokemon()
+    mixBut.removeEventListener("click", Start);
+    mixBut.addEventListener("click", Stop);
+    mixBut.value = "Stop";
+}
+
+function Stop(){
+    console.log("Stopped");
+    mixBut.removeEventListener("click", Stop);
+    mixBut.addEventListener("click", Start);
+    mixBut.value = "Start";
+} */
 })
