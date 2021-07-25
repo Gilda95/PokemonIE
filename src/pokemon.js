@@ -90,7 +90,8 @@ $(document).ready(() => {
                       'POSSIBLY', 
                       'AORTIC', 
                       'RADIOISOTOPE',
-                      'STREPTOCOCCHI']
+                      'STREPTOCOCCHI', 
+                      '850E']
 
 
 
@@ -105,12 +106,13 @@ $(document).ready(() => {
                     'Drug addiction causes I.E. ...', 
                     'Which valve is usually infected?',
                     'What is injected during PET?', 
-                    'Which bacteria commonly cause I.E.?']
+                    'Which bacteria commonly cause I.E.?', 
+                    'The cost of the PET is about...']
   var nquestion = questions1.length
   var questions2 = ['', '', '', '', '', '', '', '', '', '', '']
-  var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',     'Radioisotope', 'All']
-  var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Streptococchi']
-  var answers2 = ['Arms',   'Brian',  '38', 'Viruses',        'Antibiotics',  'Autopsy',        'Young Female',     'Possibly', 'None',       'Blood',        'None']
+  var answers0 = ['Heart',  'Duke',   '37', 'Too much study', 'Ibuprofen',    'Endoscopy',      'AppStat Students', 'Never',    'Aortic',     'Radioisotope', 'All',            '850e']
+  var answers1 = ['Brain',  'Mara',   '43', 'Fungi&Bacteria', 'Paracetamol',  'Blood Culture',  'Aged Male',        'Always',   'Tricuspid',  'Bacteria',     'Streptococchi',  '150e']
+  var answers2 = ['Arms',   'Brian',  '38', 'Viruses',        'Antibiotics',  'Autopsy',        'Young Female',     'Possibly', 'None',       'Blood',        'None',           '15e']
   var questionSel = Math.floor(Math.random()*(nquestion))
   console.log(questionSel)
   $('#move0').html(answers0[questionSel])
