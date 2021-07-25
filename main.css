@@ -13,7 +13,8 @@
 body{
     /* background-color:#bbac58; */
     /* background-color:#e4dbaa; */    /* background color of whole page */
-    background-color:#ebe4bf;
+    /* background-color:#ebe4bf; */  
+    background-color: #C5CAA5;
     color:#2f3622;
     font-family:'Pokemon', monospace;
     /* font-size:20px; */ 
@@ -222,7 +223,8 @@ span span,.button span,.level span,.name span{ /* font size of "potion" */
     border-image:url("img/frame.svg") 45% stretch;
     border-style:solid;
     border-width: 0.7em;
-    background: #ebe4bf /* background:#bbac58 */ 
+    /* background: #ebe4bf; */ /* background:#bbac58 */ 
+    background-color: #C5CAA5;
 }
 .windows .window.texts{ /* Dimension of the box */
     margin:0;
